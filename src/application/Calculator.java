@@ -27,6 +27,10 @@ public class Calculator {
 		return r* Math.pow(i, 2);
 	}
 	
+	public double pAusUundR (double u, double r) {
+		return Math.pow(u, 2) / r;
+	}
+	
 	public double getLeistung() {
 		return leistung;
 	}
