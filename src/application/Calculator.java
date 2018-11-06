@@ -23,6 +23,10 @@ public class Calculator {
 		return u * i;
 	}
 	
+	public double pAusRundI (double r, double i) {
+		return r* Math.pow(i, 2);
+	}
+	
 	public double getLeistung() {
 		return leistung;
 	}
