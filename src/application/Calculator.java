@@ -19,6 +19,10 @@ public class Calculator {
 		this.widerstand = widerstand;
 	}
 	
+	public double uAusRundI(double r, double i){
+		return r * i;
+	}
+	
 	public double getLeistung() {
 		return leistung;
 	}
