@@ -23,8 +23,12 @@ public class Calculator {
 		return r * i;
 	}
 	
-	public double uAusPundI (double p, double i){
+	public double uAusPundI(double p, double i){
 		return p / i;
+	}
+	
+	public double uAusPundR(double p, double r){
+		return sqrt(p * r);
 	}
 	
 	public double getLeistung() {
