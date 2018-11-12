@@ -44,7 +44,32 @@ public class Calculator {
 	}
 
 	public void calculate() {
-		
+
+		if(leistung!=0.0 && spannung!=0.0){
+			strom = iAusUundP(spannung,leistung);
+			widerstand = rAusUundP(spannung,leistung);
+		}
+		if(leistung!=0.0 && strom!=0.0){
+			spannung = uAusPundI(leistung,strom);
+			widerstand = rAusPundI(leistung,strom);
+		}
+		if(leistung!=0.0 && widerstand!=0.0){
+			spannung = uAusPundR(leistung,widerstand);
+			strom = iAusRundP(widerstand,leistung);
+		}
+		if(strom!=0.0 && spannung!=0.0){
+			leistung = pAusUundI(spannung,strom);
+			widerstand = rAusUundI(spannung,strom);
+		}
+		if(widerstand!=0.0 && spannung!=0.0){
+			strom = iAusUundR(spannung,widerstand);	
+			leistung = pAusUundR(spannung,widerstand);
+			
+		}
+		if(widerstand!=0.0 && strom!=0.0){
+			spannung = uAusRundI(widerstand,strom);
+			leistung = pAusRundI(widerstand,strom);
+		}
 	}
 	
 	/* Hier die Methoden mit den Formlen hinzufügen
