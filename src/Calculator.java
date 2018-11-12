@@ -1,4 +1,4 @@
-package application;
+import static java.lang.Math.sqrt;
 
 /**
  * Berechnet das Formelrad
@@ -44,9 +44,7 @@ public class Calculator {
 	}
 
 	public void calculate() {
-		/* Hier auf Grund der vorhanden Werte entscheiden
-		 * welche Methode unten aufgerufen werden muss.
-		 */
+		
 	}
 	
 	/* Hier die Methoden mit den Formlen hinzufügen
@@ -61,7 +59,7 @@ public class Calculator {
 	
 	public double pAusUundR (double u, double r) {
 		return Math.pow(u, 2) / r;
-		
+	}	
 	public double uAusRundI(double r, double i){
 		return r * i;
 	}
