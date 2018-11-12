@@ -1,4 +1,4 @@
-package application;
+
 
 import java.io.FileInputStream;
 
@@ -25,7 +25,7 @@ public class Main extends Application {
 			Pane root = new Pane();
 
 			// Creating an image
-			Image image = new Image(new FileInputStream("bin\\application\\formelradelektronik.gif"));
+			Image image = new Image(new FileInputStream("src\\formelradelektronik.gif"));
 			ImageView imageView = new ImageView(image);
 			imageView.setX(10);
 			imageView.setY(10);
