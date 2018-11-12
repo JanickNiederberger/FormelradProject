@@ -17,8 +17,20 @@ public class Calculator {
 		this.spannung = spannung;
 		this.strom = strom;
 		this.widerstand = widerstand;
-	}	
+	}
 	
+	public double pAusUundI (double u, double i){
+		return u * i;
+	}
+	
+	public double pAusRundI (double r, double i) {
+		return r* Math.pow(i, 2);
+	}
+	
+	public double pAusUundR (double u, double r) {
+		return Math.pow(u, 2) / r;
+	}
+
 	public double getLeistung() {
 		return leistung;
 	}
