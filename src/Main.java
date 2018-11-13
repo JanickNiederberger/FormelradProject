@@ -19,6 +19,10 @@ import javafx.scene.text.Font;
  * @version 22.10.2018
  */
 public class Main extends Application {
+	double power = 0.0;
+	double tension = 0.0;
+	double current = 0.0;
+	double resistence = 0.0;
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -79,18 +83,33 @@ public class Main extends Application {
 			btnBerechnen.setText("Berechnen");
 			root.getChildren().add(btnBerechnen);
 			
-			Label lblWarning = new Label("Warnung: Es wurden mehr als zwei Grï¿½ssen eingegeben");
+			Button btnZurücksetzen = new Button();
+			btnZurücksetzen.relocate(200, 445);
+			btnZurücksetzen.setText("Zurücksetzen");
+			root.getChildren().add(btnZurücksetzen);
+			
+			Label lblWarning = new Label("Warnung: Es wurden mehr als zwei Grössen eingegeben");
 			lblWarning.relocate(10, 490);
 			lblWarning.setFont(Font.font(15));
 			lblWarning.setVisible(false);
 			root.getChildren().add(lblWarning);
 
-			
+			btnZurücksetzen.setOnAction(e -> {
+				power = 0.0;
+				tension = 0.0;
+				current = 0.0;
+				resistence = 0.0;
+				txLeistung.setText("0.0");
+				txSpannung.setText("0.0");
+				txStrom.setText("0.0");
+				txWiderstand.setText("0.0");
+				lblWarning.setVisible(false);
+				txSpannung.setStyle("-fx-text-fill: black;");
+				txLeistung.setStyle("-fx-text-fill: black;");
+				txWiderstand.setStyle("-fx-text-fill: black;");
+				txStrom.setStyle("-fx-text-fill: black;");
+			});
 			btnBerechnen.setOnAction(e -> {
-				double power = 0.0;
-				double tension = 0.0;
-				double current = 0.0;
-				double resistence = 0.0;
 				if(txLeistung.getText().isEmpty()==false) {
 					power = Double.parseDouble(txLeistung.getText());
 				}
