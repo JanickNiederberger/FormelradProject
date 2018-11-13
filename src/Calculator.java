@@ -75,49 +75,73 @@ public class Calculator {
 	/* Hier die Methoden mit den Formlen hinzufügen
 	 */
 	public double pAusUundI (double u, double i){
-		return u * i;
+		double p = u * i;
+		System.out.println("P aus U und I (U * I): " + p);
+		return p;
 	}
 	
 	public double pAusRundI (double r, double i) {
-		return r* Math.pow(i, 2);
+		double p = r* Math.pow(i, 2);
+		System.out.println("P aus R und I (R * I**2): " + p);
+		return p;
 	}
 	
 	public double pAusUundR (double u, double r) {
-		return Math.pow(u, 2) / r;
+		double p = Math.pow(u, 2) / r;
+		System.out.println("P aus U und R (U**2 / R): " + p);
+		return p;
 	}	
 	public double uAusRundI(double r, double i){
-		return r * i;
+		double u = r * i;
+		System.out.println("U aus R und I (R * I): " + u);
+		return u;
 	}
 	
 	public double uAusPundI(double p, double i){
-		return p / i;
+		double u = p / i;
+		System.out.println("U aus P und I (P / I): " + u);
+		return u;
 	}
 	
 	public double uAusPundR(double p, double r){
-		return sqrt(p * r);
+		double u = sqrt(p * r);
+		System.out.println("U aus P und R (Wurzel aus (P * R)): " + u);
+		return u;
 	}
 	
 	public double iAusUundR (double u, double r) {
-		return u / r;
+		double i = u / r;
+		System.out.println("I aus U und R (U / R): " + i);
+		return i;
 	}
 
 	public double iAusUundP (double u, double p) {
-		return p / u;
+		double i = p / u;
+		System.out.println("I aus U und P (P / U): " + i);
+		return i;
 	}
 
 	public double iAusRundP (double r, double p) {
-		return sqrt(p / r);
+		double i = sqrt(p / r);
+		System.out.println("I aus R und P (Wurzel aus (P / R)): " + i);
+		return i;
 	}
 
 	public double rAusUundI (double u, double i) {
-		return u / i;
+		double r = u / i;
+		System.out.println("R aus U und I (U / I): " + r);
+		return r;
 	}
 
 	public double rAusPundI (double p, double i) {
-		return p / Math.pow(i, 2);
+		double r = p / Math.pow(i, 2);
+		System.out.println("R aus P und I (P / I**2): " + r);
+		return r;
 	}
 
 	public double rAusUundP (double u, double p) {
-		return Math.pow(u, 2) / p;
+		double r = Math.pow(u, 2) / p;
+		System.out.println("R aus U und P (U**2 / P): " + r);
+		return r;
 	}
 }
