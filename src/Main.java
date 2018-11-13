@@ -99,10 +99,10 @@ public class Main extends Application {
 				tension = 0.0;
 				current = 0.0;
 				resistence = 0.0;
-				txLeistung.setText("0.0");
-				txSpannung.setText("0.0");
-				txStrom.setText("0.0");
-				txWiderstand.setText("0.0");
+				txLeistung.setText("");
+				txSpannung.setText("");
+				txStrom.setText("");
+				txWiderstand.setText("");
 				lblWarning.setVisible(false);
 				txSpannung.setStyle("-fx-text-fill: black;");
 				txLeistung.setStyle("-fx-text-fill: black;");
@@ -153,7 +153,6 @@ public class Main extends Application {
 				else {
 					lblWarning.setVisible(false);
 				}
-				lblWarning.setVisible(true);
 				Calculator myCalculator = new Calculator(
 						power, tension, current, resistence);
 				System.out.print("Vorher:  ");
