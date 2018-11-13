@@ -79,7 +79,7 @@ public class Main extends Application {
 			btnBerechnen.setText("Berechnen");
 			root.getChildren().add(btnBerechnen);
 			
-			Label lblWarning = new Label("Warnung: Es wurden mehr als zwei Grössen eingegeben");
+			Label lblWarning = new Label("Warnung: Es wurden mehr als zwei Grï¿½ssen eingegeben");
 			lblWarning.relocate(10, 490);
 			lblWarning.setFont(Font.font(15));
 			lblWarning.setVisible(false);
@@ -106,15 +106,27 @@ public class Main extends Application {
 				int counter = 0;
 				if(power!= 0.0){
 					counter++;
+					txLeistung.setStyle("-fx-text-fill: black;");
+				} else {
+					txLeistung.setStyle("-fx-text-fill: red;");
 				}
 				if(tension!= 0.0){
-					counter++;				
-								}
+					counter++;
+					txSpannung.setStyle("-fx-text-fill: black;");
+				} else {
+					txSpannung.setStyle("-fx-text-fill: red;");
+				}
 				if(current!= 0.0){
 					counter++;
+					txStrom.setStyle("-fx-text-fill: black;");
+				} else {
+					txStrom.setStyle("-fx-text-fill: red;");
 				}
 				if(resistence!= 0.0){
 					counter++;
+					txWiderstand.setStyle("-fx-text-fill: black;");
+				} else {
+					txWiderstand.setStyle("-fx-text-fill: red;");
 				}
 				if(counter > 2){
 					lblWarning.setVisible(true);
