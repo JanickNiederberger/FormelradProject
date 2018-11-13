@@ -79,6 +79,13 @@ public class Main extends Application {
 			btnBerechnen.setText("Berechnen");
 			root.getChildren().add(btnBerechnen);
 			
+			Label lblWarning = new Label("Warnung: Es wurden mehr als zwei Grössen eingegeben");
+			lblWarning.relocate(10, 490);
+			lblWarning.setFont(Font.font(15));
+			lblWarning.setVisible(false);
+			root.getChildren().add(lblWarning);
+
+			
 			btnBerechnen.setOnAction(e -> {
 				double power = 0.0;
 				double tension = 0.0;
@@ -96,6 +103,26 @@ public class Main extends Application {
 				if(txWiderstand.getText().isEmpty()==false) {
 					resistence = Double.parseDouble(txWiderstand.getText());
 				}
+				int counter = 0;
+				if(power!= 0.0){
+					counter++;
+				}
+				if(tension!= 0.0){
+					counter++;				
+								}
+				if(current!= 0.0){
+					counter++;
+				}
+				if(resistence!= 0.0){
+					counter++;
+				}
+				if(counter > 2){
+					lblWarning.setVisible(true);
+				}
+				else {
+					lblWarning.setVisible(false);
+				}
+				lblWarning.setVisible(true);
 				Calculator myCalculator = new Calculator(
 						power, tension, current, resistence);
 				System.out.print("Vorher:  ");
@@ -110,7 +137,7 @@ public class Main extends Application {
 				txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
 			});
 
-			Scene scene = new Scene(root, 330, 490);
+			Scene scene = new Scene(root, 380, 520);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Formelrad");
